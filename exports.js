@@ -3,7 +3,7 @@ exports.handler = function (event, context, callback) {
 
     const conn = "pg://dev:sunmicrordssp1der@micrords.ckeww55ptuog.eu-west-1.rds.amazonaws.com:5432/mydb";
 
-    const query = "select row_to_json(t) FROM (SELECT array_agg(roles.name) AS roles FROM roles WHERE roles.user_id=1) t";
+    const query = "SELECT row_to_json(x) FROM (SELECT array_agg(a) as roles FROM (SELECT name as role, id FROM roles WHERE user_id=1) a) x";
 
     const { Client } = require('pg');
 
