@@ -5,7 +5,7 @@
 
 rm lambda.zip | zip -r lambda.zip *
 
-aws lambda update-function-code --function-name arn:aws:lambda:eu-west-1:903390370059:function:getRoles --zip-file fileb://${pwd}lambda.zip
+aws lambda update-function-code --function-name arn:aws:lambda:eu-west-1:903390370059:function:getRoles --zip-file fileb://$(pwd)/lambda.zip
 
 #//zip -R ${PATH_TO_ZIP} ./*
 #
